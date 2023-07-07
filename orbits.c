@@ -706,7 +706,9 @@ int main(int argc, char* argv[]) {
 // //    shader[4] = CreateShaderProg("pixlightspot.vert","pixlightspot.frag");
 //     shader[4] = CreateShaderProg("pixlightspotup.vert","pixlightspotup.frag");
 
-    // shader[1] = CreateShaderProg("pixtex.vert","pixtex.frag");
+#ifndef USEGLEW
+    shader[1] = CreateShaderProg("pixtex.vert","pixtex.frag");
+#endif
     // shader[2] = CreateShaderProg("pixlightspotup.vert","pixlightspotup.frag");
     // shader[3] = CreateShaderProg("pixlightspot.vert","pixlightspot.frag");
 
