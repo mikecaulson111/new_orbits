@@ -473,6 +473,12 @@ void keyDown(unsigned char ch, int x, int y) {
             if (orbit)
             {
                 orbit = 0;
+                for ( int i = 0; i < 2; i++)
+                {
+                    all_spheres[i].ax = 0;
+                    all_spheres[i].ay = 0;
+                    all_spheres[i].az = 0;
+                }
             }
             else
             {
@@ -700,7 +706,7 @@ int main(int argc, char* argv[]) {
 // //    shader[4] = CreateShaderProg("pixlightspot.vert","pixlightspot.frag");
 //     shader[4] = CreateShaderProg("pixlightspotup.vert","pixlightspotup.frag");
 
-    shader[1] = CreateShaderProg("pixtex.vert","pixtex.frag");
+    // shader[1] = CreateShaderProg("pixtex.vert","pixtex.frag");
     // shader[2] = CreateShaderProg("pixlightspotup.vert","pixlightspotup.frag");
     // shader[3] = CreateShaderProg("pixlightspot.vert","pixlightspot.frag");
 
@@ -741,7 +747,7 @@ int main(int argc, char* argv[]) {
     all_spheres[0].spec = 0;
     all_spheres[0].vx = 0;
     // all_spheres[0].vy = 100;
-    all_spheres[0].vy = 0.1;
+    all_spheres[0].vy = 0.05;
     all_spheres[0].vz = 0.0;
     all_spheres[0].ax = 0;
     all_spheres[0].ay = 0;
