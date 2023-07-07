@@ -1,3 +1,20 @@
+/*
+
+Code Author: Michael Caulson
+
+NOTE:  MUCH OF THE BOILERPLATE CODE WAS WRITTEN BY MY PROFESSOR:
+Willem A. (Vlakkies) Schreuder
+
+this includes all other .c files in this repository
+
+All code pertaining to the orbits was original and written by myself
+
+
+*/
+
+
+
+
 #include "CSCIx229.h"
 #include <time.h>
 
@@ -674,7 +691,7 @@ int main(int argc, char* argv[]) {
 
     glutInitWindowSize(500,500);
 
-    glutCreateWindow("Final Project - Michael Caulson");
+    glutCreateWindow("Orbits - Michael Caulson");
 #ifdef USEGLEW
    //  Initialize GLEW
    if (glewInit()!=GLEW_OK) Fatal("Error initializing GLEW\n");
