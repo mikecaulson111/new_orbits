@@ -63,7 +63,7 @@ float posz = 15.0;
 // unsigned int texture[21];
 
 //Number of bodies to show:
-int num_bodies = 3;
+int num_bodies = 2;
 
 
 int shader[] = {0,0,0,0,0};
@@ -402,6 +402,33 @@ void keyUp(unsigned char ch, int x, int y) {
     }
 }
 
+void mouse(int button, int state, int x, int y)
+{
+    if ( button == GLUT_LEFT_BUTTON && state == GLUT_DOWN )
+    {
+        double tx = ((double)x / (double)w) - 0.5;
+        double ty = ((double)y / (double)h) - 0.5;
+        all_spheres[num_bodies].x = (tx) * dim * 2;
+        all_spheres[num_bodies].y = (ty) * dim * 2;
+        all_spheres[num_bodies].z = 0;
+        all_spheres[num_bodies].vx = 0;
+        all_spheres[num_bodies].vy = 0;
+        all_spheres[num_bodies].vz = 0;
+        all_spheres[num_bodies].r = 0.3;
+        all_spheres[num_bodies].m = 50;
+        all_spheres[num_bodies].ax = 0;
+        all_spheres[num_bodies].ay = 0;
+        all_spheres[num_bodies].az = 0;
+
+        printf("x:%d, y:%d\n", x, y);
+        printf("xx: %f, yy: %f\n", all_spheres[num_bodies].x, all_spheres[num_bodies].y);
+
+        num_bodies += 1;
+
+        // printf("MOUSE POSX: %d, POSY: %d\n", x, y);
+    }
+}
+
 // Reshape function
 void reshape(int width,int height)
 {
@@ -440,6 +467,7 @@ void display() {
 
 void idle()
 {
+    // printf("mass0: x: %f, y: %f\n", all_spheres[0].x, all_spheres[0].y);
    glutPostRedisplay();
 }
 
@@ -586,6 +614,8 @@ int main(int argc, char* argv[]) {
 
     glutReshapeFunc(reshape);
 
+    glutMouseFunc(mouse);
+
     glutIdleFunc(idle);
 
     //  Switch font to nearest
@@ -685,18 +715,18 @@ int main(int argc, char* argv[]) {
     all_spheres[1].az = 0;
     all_spheres[1].m = 200;
 
-    all_spheres[2].x = 5;
-    all_spheres[2].y = 0;
-    all_spheres[2].z = 0;
-    all_spheres[2].r = 0.2;
-    all_spheres[2].spec = 0;
-    all_spheres[2].vx = 0;
-    all_spheres[2].vy = 0.03;
-    all_spheres[2].vz = 0;
-    all_spheres[2].ax = 0;
-    all_spheres[2].ay = 0;
-    all_spheres[2].az = 0;
-    all_spheres[2].m = 40;
+    // all_spheres[2].x = 5;
+    // all_spheres[2].y = 0;
+    // all_spheres[2].z = 0;
+    // all_spheres[2].r = 0.2;
+    // all_spheres[2].spec = 0;
+    // all_spheres[2].vx = 0;
+    // all_spheres[2].vy = 0.03;
+    // all_spheres[2].vz = 0;
+    // all_spheres[2].ax = 0;
+    // all_spheres[2].ay = 0;
+    // all_spheres[2].az = 0;
+    // all_spheres[2].m = 40;
 
 
     Player[0] = 0.0;
