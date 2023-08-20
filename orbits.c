@@ -409,7 +409,7 @@ void mouse(int button, int state, int x, int y)
         double tx = ((double)x / (double)w) - 0.5;
         double ty = ((double)y / (double)h) - 0.5;
         all_spheres[num_bodies].x = (tx) * dim * 2;
-        all_spheres[num_bodies].y = (ty) * dim * 2;
+        all_spheres[num_bodies].y = (ty) * -dim * 2;
         all_spheres[num_bodies].z = 0;
         all_spheres[num_bodies].vx = 0;
         all_spheres[num_bodies].vy = 0;
@@ -424,8 +424,6 @@ void mouse(int button, int state, int x, int y)
         printf("xx: %f, yy: %f\n", all_spheres[num_bodies].x, all_spheres[num_bodies].y);
 
         num_bodies += 1;
-
-        // printf("MOUSE POSX: %d, POSY: %d\n", x, y);
     }
 }
 
